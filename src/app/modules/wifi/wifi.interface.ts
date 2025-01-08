@@ -3,7 +3,8 @@ export type TUser = {
   macAddress: string;
   holdUp: string;
   date: string;
-  status?: string;
+  payment?: string;
   profileImg?: string;
   contactNumber?: string;
+  isDeleted?: boolean;
 };

@@ -18,8 +18,21 @@ export const userValidation = z.object({
       invalid_type_error: "Date must be a string",
       required_error: "Date is required",
     }),
-    status: z.string().optional(),
+    payment: z.string().optional(),
     profileImg: z.string().optional(),
     contactNumber: z.string().optional(),
+    isDeleted: z.boolean().optional(),
+  }),
+});
+export const userValidationUpdate = z.object({
+  body: z.object({
+    name: z.string().optional(),
+    macAddress: z.string().optional(),
+    holdUp: z.string().optional(),
+    date: z.string().optional(),
+    payment: z.string().optional(),
+    profileImg: z.string().optional(),
+    contactNumber: z.string().optional(),
+    isDeleted: z.boolean().optional(),
   }),
 });

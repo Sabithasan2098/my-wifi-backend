@@ -5,7 +5,7 @@ import {
   getAUser,
   updateAUser,
 } from "./wifi.controller";
-import { userValidation } from "./wifi.validation";
+import { userValidation, userValidationUpdate } from "./wifi.validation";
 import { validateRequest } from "../../middleware/validation";
 
 const router = express.Router();
@@ -16,6 +16,6 @@ router.get("/get-users", getAllUser);
 // get-single-user
 router.get("/:id", getAUser);
 // update-single-user
-router.patch("/update/:id", updateAUser);
+router.patch("/update/:id", validateRequest(userValidationUpdate), updateAUser);
 
 export const wifiRoutes = router;
