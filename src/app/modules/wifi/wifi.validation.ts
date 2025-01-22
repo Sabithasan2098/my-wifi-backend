@@ -6,10 +6,12 @@ export const userValidation = z.object({
       invalid_type_error: "Name must be a string",
       required_error: "Name is required",
     }),
-    macAddress: z.string({
-      invalid_type_error: "MacAddress must be a string",
-      required_error: "MacAddress is required",
-    }),
+    macAddress: z
+      .string({
+        invalid_type_error: "MacAddress must be a string",
+        required_error: "MacAddress is required",
+      })
+      .length(17, "Length must be 17 characters"),
     holdUp: z.string({
       invalid_type_error: "HoldUp must be a string",
       required_error: "HoldUp is required",
@@ -21,7 +23,7 @@ export const userValidation = z.object({
     payment: z.string().optional(),
     profileImg: z.string().optional(),
     contactNumber: z.string().optional(),
-    isDeleted: z.boolean().optional(),
+    isDeleted: z.boolean().optional().default(false),
   }),
 });
 export const userValidationUpdate = z.object({
