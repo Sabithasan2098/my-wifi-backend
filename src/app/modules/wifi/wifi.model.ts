@@ -19,15 +19,6 @@ const userSchema = new Schema<TUser>({
     type: String,
     required: true,
   },
-  payment: {
-    type: String,
-  },
-  contactNumber: {
-    type: String,
-  },
-  profileImg: {
-    type: String,
-  },
   isDeleted: {
     type: Boolean,
     default: false,
