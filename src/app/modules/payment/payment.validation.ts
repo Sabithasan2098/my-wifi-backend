@@ -2,9 +2,7 @@ import { z } from "zod";
 
 export const paymentValidation = z.object({
   body: z.object({
-    name: z.string({
-      required_error: "Name is required",
-    }),
+    name: z.string().optional(),
     january: z.string().optional(),
     february: z.string().optional(),
     march: z.string().optional(),

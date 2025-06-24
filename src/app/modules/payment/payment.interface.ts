@@ -1,5 +1,5 @@
 export type TPayment = {
-  name: string;
+  name?: string;
   january?: string;
   february?: string;
   march?: string;

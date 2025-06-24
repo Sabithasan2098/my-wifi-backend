@@ -1,6 +1,5 @@
 import { model, Schema } from "mongoose";
 import { TUser } from "./wifi.interface";
-import { boolean } from "zod";
 
 const userSchema = new Schema<TUser>({
   name: {

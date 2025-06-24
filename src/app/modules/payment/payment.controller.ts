@@ -1,9 +1,6 @@
 import { Request, Response } from "express";
-import {
-  getAllPaymentIntoDB,
-  postPaymentIntoDB,
-  updatePaymentIntoDB,
-} from "./payment.service";
+import { getAllPaymentIntoDB, updatePaymentIntoDB } from "./payment.service";
+import { createUserIntoDB } from "../wifi/wifi.service";
 
 // get all payment------------------------>
 export const getPayment = async (req: Request, res: Response) => {
@@ -23,7 +20,7 @@ export const getPayment = async (req: Request, res: Response) => {
 export const postPayment = async (req: Request, res: Response) => {
   try {
     const data = req.body;
-    const result = await postPaymentIntoDB(data);
+    const result = await createUserIntoDB(data);
     res.status(200).json({
       success: true,
       message: "Post data successfully",
